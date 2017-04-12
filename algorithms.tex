@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\begin{document}
+	
+% % % Page 1 % % %
+\textbf{\LARGE Author: Keith Stellyes}\\
+
+\textbf{\Large A few proofs regarding algorithms}\\
+
+Page 2: \texttt{Bubble Sort (INCOMPLETE)}
+
+Page 3: \texttt{Knuth Volume 1. Chapter 1. Problem 2 (Euclidean Algorithm)}
+
+\newpage
+% % % Page 2 % % %
+
+\textbf{\Large A proof on bubble sort}\\
+
+% ( a work in progress )
+
+A sorted set is defined as follows (Where $S_{0}$ is the initial element): 
+
+$$S_{k} \leq S_{k + 1} \vee$$ 
+$$S_{k} = |S| - 1$$
+
+\texttt{procedure bubbleSort(S : Ordered set)}
+
+\qquad\texttt{swapped $\leftarrow true$}
+
+\qquad\texttt{while swapped}
+
+\qquad\qquad\texttt{swapped $\leftarrow false$}
+
+\qquad\qquad\texttt{for n $\rightarrow$ |S| - 2}
+
+\qquad\qquad\qquad\texttt{if $S_{n} >  S_{n + 1}$}
+
+\qquad\qquad\qquad\qquad\texttt{Swap($S_{n}$, $S_{n + 1}$)}
+
+\qquad\qquad\qquad\qquad\texttt{swapped $\leftarrow true$}
+
+\newpage
+
+% % % Page 3 % % %
+\textbf{\Large A proof to solve a problem from Knuth regarding Euclidean Algorithm}\\
+
+2. [15] Prove that $m$ is always greater than $n$ at the beginning of step \textbf{E1}, after it has already occurred once. Where E1 is part of the algorithm, \textbf{E}:\\
+
+\textbf{Algorithm E:}\\
+
+\textbf{E1}: Divide $m$ by $n$ and let $r$ be the remainder.
+
+\textbf{E2}: If $r = 0$: return n
+
+\textbf{E3}: $m \leftarrow n , n \leftarrow r$ goto \textbf{E1}\\
+
+Proof:\\
+
+Prove that $m_{k} > n_{k}$ where $k > 0$\\\
+
+Let:\
+
+\hspace{1cm} $m_{k} = n_{k - 1}$
+
+\hspace{1cm} $n_{k} = m_{k - 1}$ mod $n_{k - 1}$\
+
+\hspace{1cm} $n_{k} \neq 0$\ 
+
+\hspace{1cm} $k = 0$ at the first time at \textbf{E1}\
+
+\hspace{1cm} $k > 0$\\
+
+% mk-1 > nk-1
+% mk-1 < nk-1
+% mk-1 = nk-1
+
+$m_{k} > n_{k} \rightarrow$
+
+$n_{k-1} > m_{k-1}$ mod $n_{k-1}$\\
+
+\textbf{Case I} $m_{k - 1} = n_{k - 1}$:\
+
+\hspace{1cm} Impossible:
+
+\hspace{1cm} $m_{k - 1} = n_{k - 1} \rightarrow m_{k - 1}$ mod $n_{k - 1} = 0$\
+
+\hspace{1cm} $n_{k} = m_{k - 1}$ mod $n_{k - 1} = 0 \rightarrow$\
+
+\hspace{1cm} $n_{k} = 0 \wedge n_{k} \neq 0$ \hfill Contradiction\\
+
+\textbf{Case II} $m_{k - 1} > n_{k - 1}$:\
+
+\hspace{1cm} 1. $m_{k - 1} > n_{k - 1} \rightarrow$\
+
+\hspace{1cm} 2. $n_{k-1} > m_{k - 1}$ mod $n_{k - 1}$\
+
+\hspace{1cm} 3. $m_{k} > n_{k}$\\
+
+
+\textbf{Case III} $m_{k - 1} < n_{k - 1}$:\
+
+\hspace{1cm} 1. $m_{k - 1} < n_{k - 1} \rightarrow$\
+
+\hspace{1cm} 2. $m_{k - 1}$ mod $n_{k - 1} = m_{k - 1} \rightarrow$\
+
+\hspace{1cm} 3. $m_{k} = n_{k - 1}> m_{k - 1} \wedge$\ \hfill Definition of case
+
+\hspace{1cm} 4. $n_{k} = m_{k - 1}$ \hfill 2
+
+\hspace{1cm} 5. $m_{k} > n_{k}$
+
+\end{document}
